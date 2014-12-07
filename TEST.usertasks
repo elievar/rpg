@@ -1,0 +1,4 @@
+<ListOfTask>
+  <Task file="" description="Attaque à l'épée" />
+  <Task file="" description="Pick au sol" completed="True" />
+</ListOfTask>
