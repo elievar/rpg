@@ -10,6 +10,9 @@ public class WorldBuilder : MonoBehaviour
 		public GameObject grass3;
 		public GameObject grass4;
 		public GameObject grass5;
+		public GameObject chest;
+		public GameObject tree;
+		public GameObject stone;
 		public GameObject map;
 		public float rand;
 
@@ -22,7 +25,8 @@ public class WorldBuilder : MonoBehaviour
 
 				while (x < 50) {
 						while (y < 50) {
-				rand = Random.value*100;
+								rand = Random.value * 100;
+
 								// 0  à 30 Grass
 								// 31 à 50 Grass1
 								// 51 à 70 Grass2
@@ -30,33 +34,28 @@ public class WorldBuilder : MonoBehaviour
 								// 86 à 95 Grass4
 								// 96 à 100 Grass5
 
-								if (rand <= 30) {		
-										GameObject g = Instantiate (grass, new Vector3 (x, y, 0), Quaternion.identity) as GameObject;
-										g.name = string.Concat ("Tile", x, "x", y, "_Grass");
-										Parent (map, g);
-								} else if ((rand > 31) && (rand <= 50)) {
-										GameObject g = Instantiate (grass1, new Vector3 (x, y, 0), Quaternion.identity) as GameObject;
-										g.name = string.Concat ("Tile", x, "x", y, "_Grass");
-										Parent (map, g);
-								} else if ((rand > 51) && (rand <= 70)) {
-										GameObject g = Instantiate (grass2, new Vector3 (x, y, 0), Quaternion.identity) as GameObject;
-										g.name = string.Concat ("Tile", x, "x", y, "_Grass");
-										Parent (map, g);
-								} else if ((rand > 71) && (rand <= 85)) {
-										GameObject g = Instantiate (grass3, new Vector3 (x, y, 0), Quaternion.identity) as GameObject;
-										g.name = string.Concat ("Tile", x, "x", y, "_Grass");
-										Parent (map, g);
-								} else if ((rand > 86) && (rand <= 99)) {
-										GameObject g = Instantiate (grass4, new Vector3 (x, y, 0), Quaternion.identity) as GameObject;
-										g.name = string.Concat ("Tile", x, "x", y, "_Grass");
-										Parent (map, g);
+								if (rand < 30) {		
+										CreateTile (grass, map, x, y, "Grass");
+										rand = Random.value * 100;
+										if (rand <= 1) {
+												CreateTile (chest, map, x, y, "Chest");
+										} else if ((rand > 2) && (rand <= 20)) {
+												CreateTile (tree, map, x, y, "Tree");
+										} else if ((rand > 21) && (rand <= 30)) {
+												CreateTile (stone, map, x, y, "Stone");
+										}
+								} else if ((rand >= 30) && (rand < 50)) {
+										CreateTile (grass1, map, x, y, "Grass1");
+								} else if ((rand >= 50) && (rand < 70)) {
+										CreateTile (grass2, map, x, y, "Grass2");
+								} else if ((rand >= 70) && (rand < 95)) {
+										CreateTile (grass3, map, x, y, "Grass3");
+								} else if ((rand >= 95) && (rand < 99)) {
+										CreateTile (grass4, map, x, y, "Grass4");
 								} else {
-										GameObject g = Instantiate (grass5, new Vector3 (x, y, 0), Quaternion.identity) as GameObject;
-										g.name = string.Concat ("Tile", x, "x", y, "_Grass");
-										Parent (map, g);
+										CreateTile (grass5, map, x, y, "Grass5");
 								}				
-										
-								
+
 								y++;		
 						}// fin Y
 						y = 0;
@@ -76,5 +75,13 @@ public class WorldBuilder : MonoBehaviour
 		void Parent (GameObject parentOb, GameObject childOb)
 		{
 				childOb.transform.parent = parentOb.transform;
+		}
+
+		void CreateTile (GameObject tile, GameObject parent, int posx, int posy, string name)
+		{
+				GameObject g = Instantiate (tile, new Vector3 (posx, posy, 0), Quaternion.identity) as GameObject;
+				g.name = string.Concat (name, "_", posx, "_", posy);
+				print (rand);
+				Parent (map, g);
 		}
 }

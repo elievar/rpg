@@ -6,14 +6,16 @@ Direct3D:
     Vendor:   NVIDIA
     VRAM:     1988 MB
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Unity_Projects\rpg\RPG_1_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Unity_Projects\rpg\RPG_1_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Unity_Projects\rpg\RPG_1_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Unity_Projects\rpg\RPG_1_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Unity_Projects\rpg\RPG_1_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Unity_Projects\rpg\RPG_1_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.071 seconds
+Platform assembly: C:\Unity_Projects\rpg\Build\Exe\RPG_1_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Unity_Projects\rpg\Build\Exe\RPG_1_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Unity_Projects\rpg\Build\Exe\RPG_1_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Unity_Projects\rpg\Build\Exe\RPG_1_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Unity_Projects\rpg\Build\Exe\RPG_1_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Unity_Projects\rpg\Build\Exe\RPG_1_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Unity_Projects\rpg\Build\Exe\RPG_1_Data\Managed\LibGit2Sharp.dll (this message is harmless)
+Loading C:\Unity_Projects\rpg\Build\Exe\RPG_1_Data\Managed\LibGit2Sharp.dll into Unity Child Domain
+- Completed reload, in  0.092 seconds
 desktop: 3200x1800 60Hz; virtual: 10240x2160 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
-Platform assembly: C:\Unity_Projects\rpg\RPG_1_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Unity_Projects\rpg\Build\Exe\RPG_1_Data\Managed\System.Core.dll (this message is harmless)
