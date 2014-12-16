@@ -3,7 +3,6 @@ using System.Collections;
 
 public class WorldBuilder : MonoBehaviour
 {
-
 		public GameObject grass;
 		public GameObject grass1;
 		public GameObject grass2;
@@ -19,21 +18,33 @@ public class WorldBuilder : MonoBehaviour
 		// Use this for initialization
 		void Start ()
 		{
+
+				// biome : id = tile, col1 = %de chance de le creer
+				int biome = new int;
+				biome ["grass"] = 30;
+				biome ["grass1"] = 20;
+				biome ["grass2"] = 20;
+				biome ["grass3"] = 15;
+				biome ["grass4"] = 4;
+				biome ["grass5"] = 1;
+				biome ["chest"] = 1;
+				biome ["tree"] = 20;
+				biome ["stone"] = 9;
+
+				
+				//intmap est la map au format int
+				int mapLenght = 32;
+				int mapWidth = 32;
+				//int intmap = new int[mapLenght, mapWidth];
+
+				//map est la map finale
 				map = GameObject.Find ("Map1");
+	
 				int x = 0;
 				int y = 0;
-
-				while (x < 50) {
-						while (y < 50) {
+				while (x < mapLenght) {
+						while (y < mapWidth) {
 								rand = Random.value * 100;
-
-								// 0  à 30 Grass
-								// 31 à 50 Grass1
-								// 51 à 70 Grass2
-								// 71 à 85 Grass3
-								// 86 à 95 Grass4
-								// 96 à 100 Grass5
-
 								if (rand < 30) {		
 										CreateTile (grass, map, x, y, "Grass");
 										rand = Random.value * 100;
@@ -75,6 +86,12 @@ public class WorldBuilder : MonoBehaviour
 		void Parent (GameObject parentOb, GameObject childOb)
 		{
 				childOb.transform.parent = parentOb.transform;
+		}
+
+		void CreateMap (GameObject map, int sixex, int sizey)
+		{
+			
+
 		}
 
 		void CreateTile (GameObject tile, GameObject parent, int posx, int posy, string name)
